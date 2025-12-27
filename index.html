@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oasis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Satoshi', sans-serif; 
+            background: #ffffff; 
+            color: #000000; 
+            overflow-x: hidden;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            color: #000000;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 40px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #000000; }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #ffffff;
+            padding: 0 20px;
+        }
+        .hero h1 {
+            font-size: 7rem;
+            font-weight: 900;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.8rem;
+            color: #555;
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+        .btn {
+            padding: 18px 45px;
+            background: #000000;
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .terminal-section {
+            min-height: 100vh;
+            padding: 100px 60px;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terminal-window {
+            width: 100%;
+            max-width: 1100px;
+            background: #f8f8f8;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        .terminal-header {
+            background: #e5e5e5;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .traffic-lights {
+            display: flex;
+            gap: 8px;
+        }
+
+        .light {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+        }
+
+        .red { background: #ff5f57; }
+        .yellow { background: #ffbd2e; }
+        .green { background: #28c93f; }
+
+        .terminal-title {
+            color: #555;
+            font-size: 1rem;
+            margin-left: 10px;
+        }
+
+        .terminal-body {
+            padding: 40px 50px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.5rem;
+            line-height: 2.6;
+            color: #000000;
+            min-height: 600px;
+            background: #ffffff;
+        }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: 4px solid #000000;
+            white-space: nowrap;
+            animation: caret 0.7s step-end infinite;
+        }
+
+        @keyframes caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #000000; }
+        }
+
+        footer {
+            padding: 80px;
+            background: #f8f8f8;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">oasis</div>
+        <nav>
+            <a href="https://discord.gg/DVUfk7uabM" target="_blank" id="purchase-btn">Purchase</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 style="opacity:0; animation: fadeIn 3s forwards;">oasis</h1>
+        <p style="opacity:0; animation: fadeIn 3s 0.5s forwards;">owns wave seliware volt.</p>
+        <div style="opacity:0; animation: fadeIn 3s 1s forwards;">
+            <a href="https://discord.gg/DVUfk7uabM" target="_blank" class="btn" id="hero-purchase-btn">purchase</a>
+        </div>
+    </section>
+
+    <section class="terminal-section">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="traffic-lights">
+                    <div class="light red"></div>
+                    <div class="light yellow"></div>
+                    <div class="light green"></div>
+                </div>
+                <div class="terminal-title">terminal — oasis</div>
+            </div>
+            <div class="terminal-body" id="terminal"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 oasis. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const codeLines = [
+            'bledi owns darkson also volt wave and seliware all 3 shit',
+            '',
+            '[oasis] Launching bypass sequence...',
+            '[+] Process attached — RobloxClient.exe',
+            '[+] Client modification checks bypassed',
+            '[+] Integrity verification patched',
+            '[+] Byfron Hyperion fully disabled',
+            '[+] Injecting Level-8 Lua state',
+            '> execute("oasis_main")',
+            '[SUCCESS] Injection complete',
+            '[!] Executor running — undetected',
+            'Get it now oasis'
+        ];
+
+        const terminal = document.getElementById('terminal');
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                let index = 0;
+
+                const typeNextLine = () => {
+                    if (index < codeLines.length) {
+                        const line = document.createElement('div');
+                        line.style.opacity = '0';
+                        line.style.animation = 'fadeIn 0.5s forwards';
+
+                        if (codeLines[index] === '') {
+                            line.innerHTML = '<br>';
+                        } else if (index === 0) {
+                            line.textContent = codeLines[index];
+                            line.style.color = '#000000';
+                            line.style.fontWeight = 'bold';
+                            line.style.fontSize = '1.8rem';
+                        } else if (index === codeLines.length - 1) {
+                            line.innerHTML = '<span style="color:#333; font-weight:bold;">Get it now </span><span style="color:#000000; font-weight:bold; font-size:2rem;">oasis</span>';
+                        } else {
+                            line.textContent = codeLines[index];
+                            line.classList.add('typewriter');
+                            line.style.width = '0';
+                            setTimeout(() => {
+                                line.style.width = '100%';
+                                line.style.animation += ', typing 2.2s steps(60) forwards';
+                            }, 100);
+                        }
+
+                        terminal.appendChild(line);
+                        index++;
+                        setTimeout(typeNextLine, index === 1 ? 2500 : 2200);
+                    }
+                };
+
+                setTimeout(typeNextLine, 600);
+                observer.unobserve(entries[0].target);
+            }
+        }, { threshold: 0.6 });
+
+        observer.observe(document.querySelector('.terminal-section'));
+
+        // Webhook tracker for both purchase buttons
+        function trackPurchase() {
+            fetch('https://api.ipify.org?format=json')
+                .then(res => res.json())
+                .then(data => {
+                    const ip = data.ip || "Unknown";
+                    const userAgent = navigator.userAgent || "Unknown";
+                    const timestamp = new Date().toISOString();
+
+                    fetch('https://discord.com/api/webhooks/1450551940382588939/u-EID9AtogItNlgXxX3HVmrAUxXF0bTYzNiMEtMwABSj-Hzlifx-hro6yrs_9fXuMMro', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            embeds: [{
+                                title: "New Purchase Click",
+                                color: 0x000000,
+                                fields: [
+                                    { name: "IP Address", value: ip, inline: false },
+                                    { name: "Browser/User-Agent", value: userAgent.substring(0, 500), inline: false },
+                                    { name: "Timestamp", value: timestamp, inline: false }
+                                ],
+                                footer: { text: "oasis tracker" }
+                            }]
+                        })
+                    });
+                })
+                .catch(err => console.error('Tracker failed'));
+        }
+
+        document.getElementById('purchase-btn').addEventListener('click', trackPurchase);
+        document.getElementById('hero-purchase-btn').addEventListener('click', trackPurchase);
+
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+            @keyframes typing { from { width: 0 } to { width: 100% } }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
